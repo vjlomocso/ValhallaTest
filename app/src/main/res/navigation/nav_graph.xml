@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav"
+    app:startDestination="@id/postListFragment">
+
+    <fragment
+        android:id="@+id/postListFragment"
+        android:name="com.example.valhallatest.ui.postlist.PostListFragment"
+        android:label="Posts"
+        tools:layout="@layout/post_list_fragment">
+        <action
+            android:id="@+id/listToDetailsAction"
+            app:destination="@id/postDetailsFragment"
+            app:enterAnim="@anim/fade_in"
+            app:exitAnim="@anim/fade_out"
+            app:popEnterAnim="@anim/fade_in"
+            app:popExitAnim="@anim/fade_out" />
+    </fragment>
+    <fragment
+        android:id="@+id/postDetailsFragment"
+        android:name="com.example.valhallatest.ui.postdetails.PostDetailsFragment"
+        android:label="Details"
+        tools:layout="@layout/post_details_fragment">
+        <action
+            android:id="@+id/detailsToListAction"
+            app:destination="@id/postListFragment"
+            app:enterAnim="@anim/fade_in"
+            app:exitAnim="@anim/fade_out"
+            app:popEnterAnim="@anim/fade_in"
+            app:popExitAnim="@anim/fade_out" />
+        <argument
+            android:name="postId"
+            app:argType="long" />
+    </fragment>
+</navigation>
